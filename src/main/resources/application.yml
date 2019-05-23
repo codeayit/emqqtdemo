@@ -1,0 +1,73 @@
+spring: 
+  application: 
+    name: ssm
+##################### DB #####################
+#  datasource:
+#            type: com.alibaba.druid.pool.DruidDataSource
+#            driver-class-name: com.mysql.jdbc.Driver
+#            url: jdbc:mysql://47.95.200.91:3306/Device?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull
+#            username: root
+#            password: 123456
+#            initialSize: 5
+#            minIdle: 5
+#            maxActive: 20
+#            maxWait: 60000
+#            timeBetweenEvictionRunsMillis: 60000
+#            minEvictableIdleTimeMillis: 300000
+#            validationQuery: SELECT user()
+#            testWhileIdle: true
+#            testOnBorrow: false
+#            testOnReturn: false
+#            poolPreparedStatements: true
+#      #配置Redis
+#      # Redis Config
+#            cache:
+#              type: redis
+#            redis:
+#              host: localhost
+#              port: 6379
+
+#RabbitMQ 配置
+#AMQP RabbitMQ configuration
+ # rabbitmq:
+ #   host: 39.105.124.108
+  #  port: 5672
+  #  username: msgpush
+   # password: msgpush
+   # listener:
+   #   concurrency: 4
+    #  max-concurrency: 8
+    #  retry:
+    #    initial-interval: 5000
+
+#mybatis配置
+#mybatis:
+#  mapper-locations: classpath:com/ayit/dao/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+#  type-aliases-package: com.ayit.model  # 注意：对应实体类的路径
+#  #日志配置
+#  logImpl: STDOUT_LOGGING
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+##logging:
+#  config: classpath:log4j2.xml
+
+com:
+  mqtt:
+    inbound:
+      url: tcp://www.houluzhai.top:1883
+      clientId: ServerIn
+      topics: topic_in
+      username: root
+      password: root
+    outbound:
+      urls: tcp://www.houluzhai.top:1883
+      clientId: ServerOut
+      topic: topic_out
+      username: root
+      password: root
+
+server:
+  port: 9091
+#  ip: 47.95.200.91 #配置服务器ip
+
+  
